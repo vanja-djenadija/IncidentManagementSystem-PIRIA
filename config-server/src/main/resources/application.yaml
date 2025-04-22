@@ -5,13 +5,17 @@ spring:
     config:
           server:
             git:
-              uri: https://github.com/vanja-djenadija/config-repo
+              uri: https://github.com/vanja-djenadija/config-repo.git
               searchPaths:
                 - incident-service
                 - moderation-service
+                - auth-service
+                - user-service
+                - analytics-service
+                - alert-service
+                - nlp-service
               username: ${GIT_USERNAME}
               password: ${GIT_PASSWORD}
 
 server:
   port: 8888
-

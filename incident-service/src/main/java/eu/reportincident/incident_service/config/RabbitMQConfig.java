@@ -14,7 +14,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @EnableRabbit
-@PropertySource("classpath:application.properties")
 public class RabbitMQConfig {
 
     private final RabbitMQProperties rabbitMQProperties;
