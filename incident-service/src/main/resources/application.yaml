@@ -1,7 +1,18 @@
 spring:
   application:
     name: incident-service
+
   profiles:
-    active: default
+    active: ${SPRING_PROFILES_ACTIVE:default}
+
   config:
-    import: "configserver:http://localhost:8888"
+    import: "configserver:"
+  cloud:
+    config:
+      uri: http://config-server:8888
+      failFast: false  # Don't fail immediately if the config server isn't available
+      retry:
+        maxAttempts: 10
+        initialInterval: 1000
+        multiplier: 2
+        maxInterval: 5000

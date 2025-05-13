@@ -21,3 +21,8 @@ spring:
             - gateway-service
           username: ${GIT_USERNAME}
           password: ${GIT_PASSWORD}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
